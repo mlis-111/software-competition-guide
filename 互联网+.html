@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国国际大学生创新大赛参赛指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --border: #e5e7eb;
+            --accent: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: all 0.2s;
+        }
+        
+        .back-btn:hover {
+            background: var(--border);
+            transform: translateY(-1px);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .section h3 {
+            color: var(--text);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 24px 0 16px 0;
+        }
+        
+        .section h4 {
+            color: var(--text);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .track-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .track-card {
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .track-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .track-card.purple { border-left-color: var(--purple); }
+        .track-card.purple h4 { color: var(--purple); }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .requirement-card {
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .requirement-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .value-card {
+            padding: 16px;
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+        }
+        
+        .value-card h4 {
+            color: #0369a1;
+            margin-bottom: 8px;
+        }
+        
+        .value-card.success { background: #f0fdf4; border-color: #22c55e; }
+        .value-card.success h4 { color: #15803d; }
+        
+        .value-card.warning { background: #fffbeb; border-color: #f59e0b; }
+        .value-card.warning h4 { color: #d97706; }
+        
+        ul, ol {
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+        
+        .badge.success { background: var(--success); }
+        .badge.warning { background: var(--warning); }
+        .badge.danger { background: var(--danger); }
+        .badge.purple { background: var(--purple); }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .track-grid,
+            .requirements-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回首页</a>
+        
+        <div class="header">
+            <h1>中国国际大学生创新大赛</h1>
+            <p class="subtitle">参赛指南</p>
+        </div>
+
+        <div class="section">
+            <h2>一、比赛简介</h2>
+            <p>中国国际大学生创新大赛由教育部等十二部委和地方省级人民政府共同主办，
+                是我国创新创业教育改革的生动实践。大赛自2015年举办首届以来，
+                每年一届，现已成长为覆盖全国所有高校、面向全体大学生、
+                影响最大的高校双创盛会，也是国际影响力最大的大学生创新创业大赛之一。</p>
+            
+            <div class="highlight-box">
+                <h4>🎯 大赛宗旨</h4>
+                <p><strong>激发大学生创造力，培养"大众创业、万众创新"主力军，推动赛事成果转化，促进经济提质增效升级</strong></p>
+            </div>
+            
+            <h3>🌍 覆盖领域</h3>
+            <ul>
+                <li>人工智能、绿色能源、生物医药等前沿领域</li>
+                <li>吸引全球一百多个国家和地区的高校及项目参赛</li>
+                <li>紧密结合经济社会各领域现实需求</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>二、时间安排</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">4月 - 6月</div>
+                    <div class="timeline-title">校级初赛</div>
+                    <p>由各院校负责组织，具体时间由所在院校确定。关注学校创新创业相关部门通知。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">7月 - 8月</div>
+                    <div class="timeline-title">省级复赛</div>
+                    <p>由各地负责组织，各省份复赛时间和形式有差异。关注所在省份教育部门或大赛组织方通知。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">9月 - 10月</div>
+                    <div class="timeline-title">总决赛</div>
+                    <p>各地按大赛组委会确定配额择优遴选推荐项目。总决赛相关信息通过大赛官方网站、官方社交媒体账号发布。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、参赛要求</h2>
+            
+            <h3>👥 参赛人员</h3>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>年龄限制</h4>
+                    <ul>
+                        <li>参赛人员年龄不超过35岁</li>
+                        <li>以当年大赛通知规定时间为准</li>
+                        <li>产业命题赛道参赛项目成员中的教师除外</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>参赛形式</h4>
+                    <ul>
+                        <li>可个人参赛，也可团队参赛</li>
+                        <li>团队参赛人数根据不同赛道和组别要求而定</li>
+                        <li>一般不超过规定人数（如部分组别不超过15人）</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>团队要求</h4>
+                    <ul>
+                        <li>团队成员需明确分工</li>
+                        <li>优势互补</li>
+                        <li>根据参赛团队负责人学籍或学历确定参赛学校</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>📋 参赛项目要求</h3>
+            <div class="highlight-box">
+                <h4>核心要求</h4>
+                <ul>
+                    <li><strong>紧密结合现实需求：</strong>充分体现高校在新工科、新医科、新农科、新文科建设成果</li>
+                    <li><strong>培育新模式：</strong>培育新产品、新服务、新业态、新模式</li>
+                    <li><strong>弘扬正能量：</strong>践行社会主义核心价值观，真实、健康、合法</li>
+                    <li><strong>知识产权清晰：</strong>所涉及发明创造、专利技术、资源等必须有清晰合法知识产权或物权</li>
+                    <li><strong>唯一性：</strong>只能选择一个符合要求的赛道报名参赛</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、项目要点</h2>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <h4>💡 项目创新性</h4>
+                    <ul>
+                        <li>提出独特解决方案、产品或服务</li>
+                        <li>在技术、模式、应用场景等方面有创新点</li>
+                        <li>展现与现有项目的差异化竞争优势</li>
+                        <li>运用前沿技术或理念，为行业带来新突破或变革</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card success">
+                    <h4>✅ 项目可行性</h4>
+                    <ul>
+                        <li><strong>技术可行性：</strong>具备实现项目的技术能力和资源</li>
+                        <li><strong>经济可行性：</strong>项目有合理成本预算和盈利模式</li>
+                        <li><strong>市场可行性：</strong>目标市场明确，有市场需求和发展潜力</li>
+                        <li><strong>运营可行性：</strong>团队具备运营项目的管理能力和经验</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card warning">
+                    <h4>🌍 项目社会价值</h4>
+                    <ul>
+                        <li>关注社会热点问题</li>
+                        <li>环保、教育公平、医疗健康、乡村振兴等</li>
+                        <li>项目实施能为社会带来积极影响</li>
+                        <li>创造社会效益，如解决就业、改善环境、提高生活质量</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card">
+                    <h4>💰 项目商业价值</h4>
+                    <ul>
+                        <li>制定合理商业模式</li>
+                        <li>产品或服务定位、目标客户群体</li>
+                        <li>营销策略、盈利模式、收入预测</li>
+                        <li>展现项目商业价值和市场潜力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、赛道介绍</h2>
+            
+            <h3>🎓 高教主赛道</h3>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>本科生创意组</h4>
+                    <ul>
+                        <li>参赛项目具有较好创意和市场潜力</li>
+                        <li>未进行工商登记注册</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校在校生（可为本专科生、研究生，不含在职生）</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>本科生初创组</h4>
+                    <ul>
+                        <li>参赛项目工商登记注册未满3年</li>
+                        <li>获机构或个人股权投资不超过1轮次</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校在校生</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>本科生成长组</h4>
+                    <ul>
+                        <li>参赛项目工商登记注册3年以上</li>
+                        <li>或工商登记注册未满3年，但获机构或个人股权投资2轮次以上</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校在校生</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>研究生创意组</h4>
+                    <ul>
+                        <li>同本科生创意组要求</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校全日制研究生</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>研究生初创组</h4>
+                    <ul>
+                        <li>同本科生初创组要求</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校全日制研究生</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>研究生成长组</h4>
+                    <ul>
+                        <li>同本科生成长组要求</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校全日制研究生</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🚩 "青年红色筑梦之旅"赛道</h3>
+            <div class="track-grid">
+                <div class="track-card purple">
+                    <h4>公益组</h4>
+                    <ul>
+                        <li>参赛项目以社会公益服务为目的</li>
+                        <li>在公益服务领域具有较好创意、产品或服务模式</li>
+                        <li>关注教育、医疗、环保、助老、扶贫等公益领域</li>
+                        <li>参赛申报人须为团队负责人，普通高等学校在校生或毕业5年以内的毕业生</li>
+                    </ul>
+                </div>
+                <div class="track-card purple">
+                    <h4>创意组</h4>
+                    <ul>
+                        <li>参赛项目尚未进行工商登记注册</li>
+                        <li>在乡村振兴、红色文化传承等领域具有较好创意和市场潜力</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校在校生</li>
+                    </ul>
+                </div>
+                <div class="track-card purple">
+                    <h4>创业组</h4>
+                    <ul>
+                        <li>参赛项目工商登记注册未满5年</li>
+                        <li>在乡村振兴、红色文化传承等领域开展创业实践</li>
+                        <li>参赛申报人须为团队负责人</li>
+                        <li>普通高等学校在校生或毕业5年以内的毕业生</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🏫 其他赛道</h3>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>职教赛道</h4>
+                    <ul>
+                        <li>创意组：职业院校在校生，项目具有较好创意和市场潜力</li>
+                        <li>创业组：职业院校在校生或毕业5年以内的毕业生，项目工商登记注册未满5年</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>产业命题赛道</h4>
+                    <ul>
+                        <li>围绕大赛组委会发布的产业命题开展</li>
+                        <li>要求解决产业实际问题，具有产业应用价值和市场前景</li>
+                        <li>可由高校学生与企业人员联合组队参赛</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>萌芽赛道</h4>
+                    <ul>
+                        <li>参赛项目为中学生科技创新和发明创造项目</li>
+                        <li>未进行工商登记注册</li>
+                        <li>参赛申报人须为团队负责人，在校中学生</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>六、注意事项</h2>
+            
+            <h3>📄 项目合规性</h3>
+            <ul>
+                <li>各省级教育行政部门及有关学校严格开展参赛项目审查工作</li>
+                <li>确保参赛项目合规性和真实性</li>
+                <li>审查包括参赛资格以及项目所涉及的科技成果、知识产权、财务状况、运营、荣誉奖项等方面</li>
+                <li>参赛项目所涉及材料按时如实填写提交至报名系统</li>
+            </ul>
+            
+            <h3>🔗 报名流程</h3>
+            <ul>
+                <li>参赛团队通过登录全国大学生创业服务网（https://cy.ncss.cn/）进行报名</li>
+                <li>在服务网"资料下载"板块可下载学生操作手册指导报名参赛</li>
+                <li>报名系统开放时间一般为每年5月左右</li>
+                <li>报名截止时间由各地根据复赛安排自行决定，但不得晚于7月1日</li>
+            </ul>
+            
+            <h3>👥 团队组建</h3>
+            <ul>
+                <li>精心挑选团队成员，注重成员专业背景、技能和经验互补</li>
+                <li>明确各成员在项目中的职责和分工</li>
+                <li>定期组织团队会议，加强沟通协作</li>
+                <li>提高团队执行力和项目推进效率</li>
+            </ul>
+            
+            <h3>🔒 知识产权保护</h3>
+            <ul>
+                <li>参赛项目涉及知识产权，及时申请专利、商标、著作权等知识产权保护</li>
+                <li>避免知识产权纠纷</li>
+                <li>在项目实施过程中，尊重他人知识产权，不抄袭盗用他人成果</li>
+            </ul>
+            
+            <h3>📱 信息关注</h3>
+            <ul>
+                <li>密切关注大赛官方网站（https://cy.ncss.cn/）</li>
+                <li>关注官方社交媒体账号（如微信公众号、微博等）</li>
+                <li>了解大赛最新动态、政策变化、比赛安排等</li>
+                <li>以免错过重要信息</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>七、联系方式</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>🏫 负责学院</h4>
+                    <p>创新创业学院、软件学院</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>👨‍🏫 联系人</h4>
+                    <p>王泽</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>📧 联系邮箱</h4>
+                    <p><a href="mailto:2048994001@qq.com">2048994001@qq.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国大学生计算机系统能力大赛参赛指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9; /* sky blue，与天梯赛页面风格协调 */
+            --primary-dark: #0284c7;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --border: #e5e7eb;
+            --accent: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 8px; font-weight: 500; margin-bottom: 30px; transition: all .2s; }
+        .back-btn:hover { background: var(--border); transform: translateY(-1px); }
+
+        .header { text-align: center; margin-bottom: 40px; padding: 40px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; border-radius: 12px; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .header .subtitle { font-size: 1.2rem; opacity: .9; }
+
+        .section { margin-bottom: 40px; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,.1); border: 1px solid var(--border); }
+        .section h2 { color: var(--primary); font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .section h3 { color: var(--text); font-size: 1.2rem; font-weight: 600; margin: 16px 0 10px; }
+
+        ul, ol { margin: 12px 0; padding-left: 24px; }
+        li { margin: 8px 0; }
+
+        .requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 12px 0; }
+        .requirement-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .requirement-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+        .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 12px 0; }
+        .track-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .track-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+        .highlight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid var(--warning); border-radius: 8px; padding: 16px; margin: 16px 0; }
+        .highlight-box h4 { color: #92400e; margin-bottom: 8px; }
+
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--primary); }
+        .timeline-item { position: relative; margin-bottom: 16px; padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .timeline-item::before { content: ''; position: absolute; left: -23px; top: 22px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; border: 3px solid #fff; }
+        .timeline-title { font-weight: 600; margin-bottom: 6px; }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header h1 { font-size: 2rem; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回首页</a>
+
+        <div class="header">
+            <h1>全国大学生计算机系统能力大赛</h1>
+            <p class="subtitle">参赛指南</p>
+        </div>
+
+        <div class="section">
+            <h2>一、赛事简介</h2>
+            <p>全国大学生计算机系统能力大赛聚焦“从底层到系统”的综合能力，包括操作系统、编译系统、体系结构、系统软件与工程化实践等，强调扎实的计算机系统基础与大规模系统实现能力。</p>
+            <div class="highlight-box">
+                <h4>核心特征</h4>
+                <ul>
+                    <li>重基础：面向计算机系统核心课程的综合性检验</li>
+                    <li>强实践：倡导工程化、可复现、可评测的系统实现</li>
+                    <li>看落地：数据与指标可验证，强调性能与稳定性</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>二、参赛对象与组队要求</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>主体资格</h4>
+                    <ul>
+                        <li>全国高校在读学生（专科/本科/研究生）</li>
+                        <li>不限专业，建议具备系统课程基础</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>团队规模</h4>
+                    <ul>
+                        <li>1-3 人/队（建议分工：内核/编译/性能/文档）</li>
+                        <li>指导教师可选，不超过 2 名</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>原创与合规</h4>
+                    <ul>
+                        <li>允许基于开源项目二次开发，须遵循许可证</li>
+                        <li>严禁抄袭与剽窃，需可溯源与可复现</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、赛道设置与作品要求（示例）</h2>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>操作系统与内核工程</h4>
+                    <ul>
+                        <li>内核子系统实现/优化（进程、内存、文件、调度、IO）</li>
+                        <li>可提交：源码、性能对比报告、可复现实验脚本</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>编译与程序优化</h4>
+                    <ul>
+                        <li>前端/中端/后端任一环节的功能实现与优化</li>
+                        <li>可提交：语言前端、IR 优化 Pass、目标生成与测试集</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>体系结构与性能工程</h4>
+                    <ul>
+                        <li>仿真器、微架构模块、并行优化与性能剖析</li>
+                        <li>可提交：仿真/实机测试数据、指标复现实验</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>系统软件与工程化</h4>
+                    <ul>
+                        <li>运行时系统、分布式系统、数据库/存储、网络协议栈</li>
+                        <li>可提交：系统设计文档、可靠性与一致性验证</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h4>提交材料建议</h4>
+                <ul>
+                    <li>README（构建、运行、评测步骤）+ 复现实验脚本（如 Makefile、Dockerfile）</li>
+                    <li>性能基线与对照组，明确硬件/软件环境与参数</li>
+                    <li>代码遵循开源许可证，第三方依赖列出版本与来源</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、赛程安排（示例）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">报名与开题（3-4 月）</div>
+                    <ul>
+                        <li>确定赛道与题目方向，完成资料与环境准备</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">开发与阶段评测（5-7 月）</div>
+                    <ul>
+                        <li>完成核心功能与优化，提交中期进展与阶段报告</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">作品提交与初评（7-8 月）</div>
+                    <ul>
+                        <li>提交源码、文档、演示视频与复现实验脚本</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">决赛与答辩（8-9 月）</div>
+                    <ul>
+                        <li>现场/线上演示与答辩，完成性能复核与问答</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、报名与官网（指引）</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>官网地址</h4>
+                    <p><a href="https://os.educg.net/#/" target="_blank" rel="noopener">https://os.educg.net/#/</a></p>
+                </div>
+                <div class="requirement-card">
+                    <h4>报名方式</h4>
+                    <ul>
+                        <li>登录官网完成团队注册与项目信息填写</li>
+                        <li>材料于截止前可修改与重复提交，以官网最新通知为准</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>准备资料</h4>
+                    <ul>
+                        <li>技术文档（设计、实现、评测方法与结果）</li>
+                        <li>演示视频（3-7 分钟，突出系统能力与指标）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>六、评审维度与奖项设置（示例）</h2>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>系统性与完整度（30分）</h4>
+                    <ul>
+                        <li>模块边界清晰、接口规范、文档与测试齐全</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>性能与稳定性（30分）</h4>
+                    <ul>
+                        <li>关键指标达成、在可比基线上的改进幅度</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>创新性与难度（25分）</h4>
+                    <ul>
+                        <li>技术/工程创新点、实现难度与技术深度</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>可复现与规范性（15分）</h4>
+                    <ul>
+                        <li>一键复现实验、依赖清单、许可证与合规</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>七、注意事项</h2>
+            <div class="highlight-box">
+                <h4>工程与合规提醒</h4>
+                <ul>
+                    <li>建议提供 Docker/容器环境或脚本以保证可复现</li>
+                    <li>遵循第三方依赖许可证，标注来源与版本</li>
+                    <li>对比实验需说明硬件/软件环境与参数配置</li>
+                </ul>
+            </div>
+            <ul>
+                <li>建议提前 3-5 天完成提交，避免临近截止平台拥堵</li>
+                <li>严禁学术不端，一经查实取消参赛资格</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>八、联系方式</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>🏫 负责学院</h4>
+                    <p>软件学院</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>👨‍🏫 联系人</h4>
+                    <p>高程昕</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>📧 联系邮箱</h4>
+                    <p><a href="mailto:gaochengxin@tyut.edu.cn">gaochengxin@tyut.edu.cn</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

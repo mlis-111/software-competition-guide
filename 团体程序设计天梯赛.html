@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>中国高校计算机大赛 - 团体程序设计天梯赛参赛指南</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--primary: #0ea5e9;
+			--primary-dark: #0284c7;
+			--text: #1f2937;
+			--text-light: #6b7280;
+			--bg: #ffffff;
+			--border: #e5e7eb;
+			--accent: #f3f4f6;
+			--warning: #f59e0b;
+		}
+
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+		.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+		.back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 8px; font-weight: 500; margin-bottom: 30px; transition: all .2s; }
+		.back-btn:hover { background: var(--border); transform: translateY(-1px); }
+
+		.header { text-align: center; margin-bottom: 40px; padding: 40px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; border-radius: 12px; }
+		.header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+		.header .subtitle { font-size: 1.2rem; opacity: .9; }
+
+		.section { margin-bottom: 40px; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,.1); border: 1px solid var(--border); }
+		.section h2 { color: var(--primary); font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+		.section h3 { color: var(--text); font-size: 1.2rem; font-weight: 600; margin: 16px 0 10px; }
+
+		ul, ol { margin: 12px 0; padding-left: 24px; }
+		li { margin: 8px 0; }
+
+		.requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 12px 0; }
+		.requirement-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+		.requirement-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+		.highlight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid var(--warning); border-radius: 8px; padding: 16px; margin: 16px 0; }
+		.highlight-box h4 { color: #92400e; margin-bottom: 8px; }
+
+		.timeline { position: relative; padding-left: 30px; }
+		.timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--primary); }
+		.timeline-item { position: relative; margin-bottom: 16px; padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+		.timeline-item::before { content: ''; position: absolute; left: -23px; top: 22px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; border: 3px solid #fff; }
+		.timeline-title { font-weight: 600; margin-bottom: 6px; }
+
+		@media (max-width: 768px) {
+			.container { padding: 10px; }
+			.header h1 { font-size: 2rem; }
+			.section { padding: 20px; }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="index.html" class="back-btn">← 返回首页</a>
+
+		<div class="header">
+			<h1>团体程序设计天梯赛</h1>
+			<p class="subtitle">参赛指南</p>
+		</div>
+
+		<div class="section">
+			<h2>一、组织机构</h2>
+			<div class="requirements-grid">
+				<div class="requirement-card">
+					<h4>主办单位</h4>
+					<p>全国高等学校计算机教育研究会</p>
+				</div>
+				<div class="requirement-card">
+					<h4>承办单位</h4>
+					<p>浙江大学、西北工业大学（西北区）、东北大学（东北区）、杭州电子科技大学（华东区）、海南大学（华南区）、重庆大学（西南区）、北京工业大学（华北区）、中南大学（华中区）</p>
+				</div>
+				<div class="requirement-card">
+					<h4>技术支持</h4>
+					<p>百腾教育、网易蜂巢</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2>二、参赛队组成</h2>
+			<div class="requirements-grid">
+				<div class="requirement-card">
+					<h4>组别设置</h4>
+					<ul>
+						<li>珠峰争鼎（本科组）</li>
+						<li>华山论剑（本科组）</li>
+						<li>沧海竞舟（专科组）</li>
+						<li>本科生限报“华山论剑”或“珠峰争鼎”；专科生可报任一组</li>
+					</ul>
+				</div>
+				<div class="requirement-card">
+					<h4>队伍规模</h4>
+					<ul>
+						<li>每队最多 10 名队员，须为在册本/专科生</li>
+						<li>队内含本科生则不可报名“沧海竞舟”组</li>
+					</ul>
+				</div>
+				<div class="requirement-card">
+					<h4>教练要求</h4>
+					<ul>
+						<li>至少 1 名教练，须为参赛高校正式教师</li>
+						<li>一位教练可作为多支队伍代表</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2>三、竞赛规则与要求</h2>
+			<ul>
+				<li><strong>竞赛时长：</strong>3 小时；三组共用同一套题，统一评分规则。</li>
+				<li><strong>线上参赛：</strong>自备机器与环境，可用本地调试工具；禁止虚拟机、双屏、耳机等；比赛中禁止触碰 USB 接口；除 OMS 客户端外禁止访问任何网站与即时通信工具；不得打开任何电子/纸质资料。</li>
+				<li><strong>线下参赛：</strong>仅可携带无计算功能的铅笔或水笔，不得携带任何可计算/通讯设备或资料。</li>
+			</ul>
+			<div class="highlight-box">
+				<h4>禁用与纪律</h4>
+				<ul>
+					<li>严禁使用虚拟机、双屏、佩戴耳机等电子设备</li>
+					<li>禁止访问非指定网站、使用任何即时通信工具</li>
+					<li>不得打开本地预存电子资料或携带纸质资料</li>
+					<li>不得与监考老师以外的任何人交谈，须接受检查</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2>四、命题与竞赛评分</h2>
+			<div class="requirements-grid">
+				<div class="requirement-card">
+					<h4>题目设置</h4>
+					<ul>
+						<li>基础级 8 题：5/10/15/20 分各 2 题，满分 100 分</li>
+						<li>进阶级 4 题：每题 25 分，满分 100 分</li>
+						<li>登顶级 3 题：每题 30 分，满分 90 分</li>
+					</ul>
+				</div>
+				<div class="requirement-card">
+					<h4>评分规则</h4>
+					<ul>
+						<li>严格按输入/输出要求提交程序</li>
+						<li>每题由若干测试用例构成，得分为通过用例之和</li>
+						<li>可反复提交，取最高分；提交错误不扣分</li>
+					</ul>
+				</div>
+				<div class="requirement-card">
+					<h4>先锋奖励</h4>
+					<p>在进阶和登顶阶段最先获得指定满分的前 5 名，分别获 25、20、15、10、5 分奖励；计入个人总分与团队有效分。</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2>五、报名与网站</h2>
+			<div class="requirements-grid">
+				<div class="requirement-card">
+					<h4>报名方式</h4>
+					<p>各校可派 1 名总负责人在赛事官网通过邀请码完成注册，下载报名表填写后上传；截止日前允许修改并可反复提交。</p>
+				</div>
+				<div class="requirement-card">
+					<h4>官网与练习</h4>
+					<ul>
+						<li>天梯赛官网：<a href="http://gplt.patest.cn/" target="_blank" rel="noopener">http://gplt.patest.cn/</a></li>
+						<li>PAT（程序设计能力考试）：<a href="https://www.patest.cn/" target="_blank" rel="noopener">https://www.patest.cn/</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2>六、联系方式</h2>
+			<div class="requirements-grid">
+				<div class="requirement-card">
+					<h4>🏫 负责学院</h4>
+					<p>软件学院</p>
+				</div>
+				<div class="requirement-card">
+					<h4>👨‍🏫 联系人</h4>
+					<p>闫琛</p>
+				</div>
+				<div class="requirement-card">
+					<h4>📧 联系邮箱</h4>
+					<p><a href="mailto:yanchen@tyut.edu.cn">yanchen@tyut.edu.cn</a></p>
+				</div>
+			</div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

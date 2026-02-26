@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"挑战杯"全国大学生课外学术科技作品竞赛参赛指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --border: #e5e7eb;
+            --accent: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --blue: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: all 0.2s;
+        }
+        
+        .back-btn:hover {
+            background: var(--border);
+            transform: translateY(-1px);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .section h3 {
+            color: var(--text);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 24px 0 16px 0;
+        }
+        
+        .section h4 {
+            color: var(--text);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .category-card {
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .category-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .category-card.blue { border-left-color: var(--blue); }
+        .category-card.blue h4 { color: var(--blue); }
+        
+        .category-card.success { border-left-color: var(--success); }
+        .category-card.success h4 { color: var(--success); }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .requirement-card {
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .requirement-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .tip-card {
+            padding: 16px;
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+        }
+        
+        .tip-card h4 {
+            color: #0369a1;
+            margin-bottom: 8px;
+        }
+        
+        .tip-card.success { background: #f0fdf4; border-color: #22c55e; }
+        .tip-card.success h4 { color: #15803d; }
+        
+        .tip-card.warning { background: #fffbeb; border-color: #f59e0b; }
+        .tip-card.warning h4 { color: #d97706; }
+        
+        ul, ol {
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--accent);
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+        
+        .badge.success { background: var(--success); }
+        .badge.warning { background: var(--warning); }
+        .badge.danger { background: var(--danger); }
+        .badge.blue { background: var(--blue); }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .category-grid,
+            .requirements-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回首页</a>
+        
+        <div class="header">
+            <h1>"挑战杯"全国大学生课外学术科技作品竞赛</h1>
+            <p class="subtitle">【2026小挑】参赛指南</p>
+        </div>
+
+        <div class="section">
+            <h2>一、比赛简介</h2>
+            <p>"挑战杯"全国大学生课外学术科技作品竞赛（简称"小挑"）由共青团中央、中国科协、教育部、全国学联和地方政府共同主办，每两年举办一届，是国内大学生科技创新领域的标志性赛事之一。</p>
+            
+            <div class="highlight-box">
+                <h4>🎯 核心导向</h4>
+                <p><strong>"创新驱动发展，青春筑梦未来"</strong></p>
+                <p>2026年竞赛聚焦国家战略需求与社会发展热点，旨在搭建大学生学术科技成果展示与交流平台，激发青年学生科研创新热情，培养其解决实际问题的能力，推动科研成果向现实生产力转化。</p>
+            </div>
+            
+            <h3>📊 赛事规模</h3>
+            <ul>
+                <li>覆盖全国31个省（自治区、直辖市）及港澳地区</li>
+                <li>吸引超千所高校、数十万学生参与</li>
+                <li>2026年竞赛特别关注五大领域</li>
+            </ul>
+            
+            <h3>🔬 重点领域</h3>
+            <div class="category-grid">
+                <div class="category-card">
+                    <h4>科技创新与未来产业</h4>
+                    <p>人工智能、大数据、生物技术等前沿技术</p>
+                </div>
+                <div class="category-card">
+                    <h4>乡村振兴与农业农村现代化</h4>
+                    <p>农业科技创新、农村发展</p>
+                </div>
+                <div class="category-card">
+                    <h4>生态文明建设与绿色低碳发展</h4>
+                    <p>环保技术、可持续发展</p>
+                </div>
+                <div class="category-card">
+                    <h4>文化创意与区域交流合作</h4>
+                    <p>文化传承、区域发展</p>
+                </div>
+                <div class="category-card">
+                    <h4>社会治理和公共服务</h4>
+                    <p>社会管理、公共服务创新</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>二、时间安排（2026年竞赛）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年6月 — 2026年3月</div>
+                    <div class="timeline-title">高校内部阶段</div>
+                    <ul>
+                        <li><strong>动员部署与项目孵化（2025年6月 — 9月）：</strong>校园宣讲会、项目孵化课程</li>
+                        <li><strong>学院初赛（2025年10月 — 11月）：</strong>学院内部评审，筛选优秀项目</li>
+                        <li><strong>校级决赛与项目打磨（2025年12月 — 2026年3月）：</strong>校级评审，项目优化</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年4月 — 5月</div>
+                    <div class="timeline-title">省级竞赛阶段</div>
+                    <ul>
+                        <li><strong>材料提交（2026年4月上旬）：</strong>各高校统一提交申报材料</li>
+                        <li><strong>省级评审与答辩（2026年4月中旬 — 5月中旬）：</strong>初评（书面评审）和复评（现场答辩）</li>
+                        <li><strong>结果公示与推荐（2026年5月下旬）：</strong>按配额推荐优秀项目晋级全国总决赛</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年6月 — 10月</div>
+                    <div class="timeline-title">全国竞赛阶段</div>
+                    <ul>
+                        <li><strong>全国初评（2026年6月 — 7月）：</strong>专家书面评审，筛选决赛项目</li>
+                        <li><strong>决赛准备（2026年8月 — 9月）：</strong>完善项目成果，制作展示材料</li>
+                        <li><strong>全国总决赛（2026年10月）：</strong>现场展示+答辩评审，评选奖项</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、参赛要求</h2>
+            
+            <h3>👥 参赛人员</h3>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>主体资格</h4>
+                    <ul>
+                        <li>全日制普通高等学校在读学生</li>
+                        <li>本科生、专科生、研究生（含硕士、博士）</li>
+                        <li>2026年竞赛允许跨校组队</li>
+                        <li>每支团队人数原则上不超过15人</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>特殊限制</h4>
+                    <ul>
+                        <li>博士研究生仅可作为团队成员参赛</li>
+                        <li>博士研究生人数不超过团队总人数的30%</li>
+                        <li>已毕业学生不可作为参赛队员</li>
+                        <li>若项目在学期间完成，毕业时间不超过竞赛当年6月的可例外</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>指导教师</h4>
+                    <ul>
+                        <li>每支团队可配备1-2名指导教师</li>
+                        <li>指导教师须为高校在职教师（含科研院所研究员）</li>
+                        <li>负责指导项目研究与参赛准备</li>
+                        <li>同一教师最多指导2支团队</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>📋 参赛作品</h3>
+            <div class="category-grid">
+                <div class="category-card blue">
+                    <h4>自然科学类学术论文</h4>
+                    <ul>
+                        <li>侧重基础研究</li>
+                        <li>需具备严谨的学术逻辑</li>
+                        <li>完整的实验数据或理论分析</li>
+                        <li>选题需符合学科发展方向</li>
+                        <li>如数学、物理、化学、生物等</li>
+                    </ul>
+                </div>
+                <div class="category-card success">
+                    <h4>哲学社会科学类社会调查报告和学术论文</h4>
+                    <ul>
+                        <li>聚焦社会热点问题</li>
+                        <li>需有扎实的调研基础</li>
+                        <li>调研样本量不少于300份</li>
+                        <li>或调研区域覆盖3个以上地级市</li>
+                        <li>内容可涉及经济、法律、教育、文化、社会治理等领域</li>
+                    </ul>
+                </div>
+                <div class="category-card">
+                    <h4>科技发明制作类作品</h4>
+                    <ul>
+                        <li><strong>A类：</strong>有实物产品且具备一定技术先进性的发明</li>
+                        <li><strong>B类：</strong>无实物但有完整设计方案的发明</li>
+                        <li>需提供专利证书（若已申请）、技术检测报告等证明材料</li>
+                        <li>如智能设备、新材料制品、软件系统、工艺流程</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>核心要求</h4>
+                <ul>
+                    <li><strong>原创性：</strong>作品须为参赛团队原创，不得抄袭、盗用他人成果</li>
+                    <li><strong>合规性：</strong>符合国家法律法规与政策导向，践行社会主义核心价值观</li>
+                    <li><strong>安全性：</strong>科技发明类作品需确保无安全隐患</li>
+                    <li><strong>创新性：</strong>已获奖作品需有30%以上改进内容</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、项目要点（分类别指导）</h2>
+            
+            <h3>🔬 自然科学类学术论文</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>选题技巧</h4>
+                    <ul>
+                        <li>优先选择"小而精"的选题</li>
+                        <li>避免过于宽泛</li>
+                        <li>可结合导师科研课题</li>
+                        <li>关注学科竞赛热点</li>
+                    </ul>
+                </div>
+                <div class="tip-card success">
+                    <h4>内容规范</h4>
+                    <ul>
+                        <li>包含摘要、引言、研究方法、实验结果、讨论、结论等部分</li>
+                        <li>实验数据需真实可追溯</li>
+                        <li>引用文献需为近5年核心期刊论文</li>
+                        <li>至少15篇，其中外文文献占比不低于30%</li>
+                    </ul>
+                </div>
+                <div class="tip-card warning">
+                    <h4>创新亮点</h4>
+                    <ul>
+                        <li>突出"学术突破"</li>
+                        <li>提出新理论、改进实验方法、发现新现象</li>
+                        <li>明确说明与现有研究的差异</li>
+                        <li>可通过"对比分析表"展示</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>📊 哲学社会科学类社会调查报告和学术论文</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>调研设计</h4>
+                    <ul>
+                        <li>采用"线上+线下"结合的调研方式</li>
+                        <li>线下调研需覆盖不同区域</li>
+                        <li>线上调研需确保样本代表性</li>
+                        <li>调研问卷需通过信效度检验</li>
+                    </ul>
+                </div>
+                <div class="tip-card success">
+                    <h4>问题导向</h4>
+                    <ul>
+                        <li>明确解决的社会问题</li>
+                        <li>分析问题成因时结合政策、经济、文化等多维度</li>
+                        <li>提出的对策需具备可操作性</li>
+                        <li>如"建议地方政府设立养老服务补贴"需说明补贴标准、资金来源</li>
+                    </ul>
+                </div>
+                <div class="tip-card warning">
+                    <h4>案例支撑</h4>
+                    <ul>
+                        <li>加入典型案例分析</li>
+                        <li>如某地区成功经验、某企业失败教训</li>
+                        <li>案例需具体详实</li>
+                        <li>含时间、地点、数据、当事人访谈记录</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>⚙️ 科技发明制作类作品</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>技术可行性</h4>
+                    <ul>
+                        <li>确保发明方案可实现</li>
+                        <li>若为实物作品，需完成原型制作</li>
+                        <li>提供测试数据</li>
+                        <li>若为软件类作品，需提供演示视频、源代码</li>
+                    </ul>
+                </div>
+                <div class="tip-card success">
+                    <h4>应用场景</h4>
+                    <ul>
+                        <li>明确作品的目标用户与应用领域</li>
+                        <li>分析市场需求</li>
+                        <li>可引用行业报告数据</li>
+                        <li>如"2025年中国工业废水处理市场规模达XX亿元"</li>
+                    </ul>
+                </div>
+                <div class="tip-card warning">
+                    <h4>转化潜力</h4>
+                    <ul>
+                        <li>说明作品的产业化路径</li>
+                        <li>如"已与XX企业达成合作意向"</li>
+                        <li>计划申请发明专利后转让技术</li>
+                        <li>若有初步经济效益需重点突出</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、注意事项</h2>
+            
+            <h3>📄 材料准备细节</h3>
+            <ul>
+                <li><strong>申报材料：</strong>需按"省级组委会模板"填写，研究报告字数需符合要求</li>
+                <li><strong>证明材料：</strong>需加盖公章，如调研数据需当地政府或合作单位盖章</li>
+                <li><strong>PPT制作：</strong>需简洁明了，核心内容用图表展示，页数控制在20-25页</li>
+            </ul>
+            
+            <h3>⏰ 时间节点把控</h3>
+            <ul>
+                <li>提前3个月完成项目核心研究，预留1个月时间修改完善材料</li>
+                <li>关注各级组委会通知，设置"时间节点提醒"</li>
+                <li>避免错过报名或答辩</li>
+            </ul>
+            
+            <h3>🔒 知识产权保护</h3>
+            <ul>
+                <li>若作品涉及核心技术，建议在参赛前申请知识产权</li>
+                <li>团队内部需签署《知识产权归属协议》</li>
+                <li>明确项目成果的所有权与使用权</li>
+            </ul>
+            
+            <h3>🎤 答辩准备技巧</h3>
+            <ul>
+                <li>提前模拟答辩场景，邀请指导教师、行业专家担任评委</li>
+                <li>训练团队成员的表达能力</li>
+                <li>准备"应急方案"，如遇评委质疑需冷静回应</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>六、常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 跨专业组队是否可行？</div>
+                <p><strong>A:</strong> 可行，且鼓励跨专业组队（如"计算机+生物"团队开发医疗检测软件，"经济+环境"团队研究绿色金融），但需确保团队成员分工明确，避免"挂名"现象。</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 作品未完成是否可以参赛？</div>
+                <p><strong>A:</strong> 不建议，竞赛要求作品需具备完整的研究成果（如论文需完成全文，发明需有原型或完整方案），未完成作品会因"成果不完整"被扣分，若项目仍在进行中，可选择参加下一届竞赛。</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 省级竞赛未获奖，是否有补救机会？</div>
+                <p><strong>A:</strong> 部分省份会设置"省级复活赛"或"专项赛"，未获省级奖项但具备潜力的项目可申请参与；若未获得复活资格，可总结经验，优化项目后参加其他赛事。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

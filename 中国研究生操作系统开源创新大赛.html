@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国研究生操作系统开源创新大赛参赛指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7c3aed; /* purple，与AI类页面协调 */
+            --primary-dark: #6d28d9;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --border: #e5e7eb;
+            --accent: #f3f4f6;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 8px; font-weight: 500; margin-bottom: 30px; transition: all .2s; }
+        .back-btn:hover { background: var(--border); transform: translateY(-1px); }
+
+        .header { text-align: center; margin-bottom: 40px; padding: 40px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; border-radius: 12px; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .header .subtitle { font-size: 1.2rem; opacity: .9; }
+
+        .section { margin-bottom: 40px; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,.1); border: 1px solid var(--border); }
+        .section h2 { color: var(--primary); font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .section h3 { color: var(--text); font-size: 1.2rem; font-weight: 600; margin: 16px 0 10px; }
+
+        ul, ol { margin: 12px 0; padding-left: 24px; }
+        li { margin: 8px 0; }
+
+        .requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 12px 0; }
+        .requirement-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .requirement-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--primary); }
+        .timeline-item { position: relative; margin-bottom: 16px; padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .timeline-item::before { content: ''; position: absolute; left: -23px; top: 22px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; border: 3px solid #fff; }
+        .timeline-title { font-weight: 600; margin-bottom: 6px; }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header h1 { font-size: 2rem; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回首页</a>
+
+        <div class="header">
+            <h1>中国研究生操作系统开源创新大赛</h1>
+            <p class="subtitle">参赛指南</p>
+        </div>
+
+        <div class="section">
+            <h2>一、赛事简介</h2>
+            <p>中国研究生操作系统开源创新大赛是中国研究生创新实践系列大赛主题赛事之一，聚焦操作系统与开源生态，鼓励研究生及本科生开展面向真实场景的系统研发与创新实践。</p>
+        </div>
+
+        <div class="section">
+            <h2>二、组织单位</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>指导单位</h4>
+                    <p>教育部学位管理与研究生教育司</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>主办单位</h4>
+                    <p>中国学位与研究生教育学会、中国科协青少年科技中心</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>承办单位（2025 第二届）</h4>
+                    <p>北京航空航天大学、北京航空航天大学杭州创新研究院</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、参赛对象与组队要求</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>参赛对象</h4>
+                    <ul>
+                        <li>具有正式学籍的研究生与本科生均可报名</li>
+                        <li>报名须保证个人信息准确有效</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>组队规则</h4>
+                    <ul>
+                        <li>每队不多于 3 名学生 + 1 名指导教师</li>
+                        <li>参赛学生可为在读研究生、本研贯通、已获读研资格的本科生、在读本科生</li>
+                        <li>若含本科生，须由研究生作为队长注册</li>
+                        <li>每位参赛者当届最多参与一个赛题；同一教师可指导多队；高校队数不限</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、赛程安排（2025）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">报名时间</div>
+                    <p>2025 年 5 月 1 日 — 7 月 18 日 17:00（培养单位资格审核截止同日同时间）</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">作品提交</div>
+                    <p>2025 年 5 月 20 日 — 7 月 20 日 17:00</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">初赛评审</div>
+                    <p>2025 年 7 月下旬</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">决赛与地点</div>
+                    <p>决赛通知及名单 2025 年 7 月底公布；决赛于 2025 年 9 月下旬在浙江省杭州市滨江区举行</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、报名与作品提交</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>报名方式</h4>
+                    <ul>
+                        <li>通过“中国研究生创新实践系列大赛”官网注册并完善信息（<a href="https://cpipc.acge.org.cn/" target="_blank" rel="noopener">https://cpipc.acge.org.cn/</a>）</li>
+                        <li>报名后组委会审核信息，通过后提供对应作品提交链接</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>作品提交</h4>
+                    <ul>
+                        <li>通过大赛协同开发官方平台 GitLink 提交（<a href="https://www.gitlink.org.cn/" target="_blank" rel="noopener">https://www.gitlink.org.cn/</a>）</li>
+                        <li>从赛题项目链接进入并复刻项目，添加队员共同开发后提交</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>六、评审方式</h2>
+            <ul>
+                <li><strong>初赛评审：</strong>每个作品由不少于 3 名专家独立评审，确定入围决赛名单；在官网与官方微信公示 7 天。</li>
+                <li><strong>决赛评审：</strong>线下赛，采用答辩报告 + 现场演示 + 专家问答的综合评审方式。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>七、奖项设置</h2>
+            <ul>
+                <li>按赛道分级评审，设一等奖、二等奖、三等奖；评优秀组织单位与优秀指导教师。</li>
+                <li><strong>一等奖：</strong>冠军 10 万元、亚军 7 万元、季军 4 万元，其余一等奖队伍每队 3 万元</li>
+                <li><strong>二等奖：</strong>每队 2 万元</li>
+                <li><strong>三等奖：</strong>每队 6000 元</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>八、联系方式</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>🏫 负责学院</h4>
+                    <p>研究生院、软件学院</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>👨‍🏫 联系人</h4>
+                    <p>王泽</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>📧 联系邮箱</h4>
+                    <p><a href="mailto:2048994001@qq.com">2048994001@qq.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

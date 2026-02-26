@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工智能创意赛参赛指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1; /* indigo */
+            --primary-dark: #4f46e5;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --border: #e5e7eb;
+            --accent: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 8px; font-weight: 500; margin-bottom: 30px; transition: all .2s; }
+        .back-btn:hover { background: var(--border); transform: translateY(-1px); }
+
+        .header { text-align: center; margin-bottom: 40px; padding: 40px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; border-radius: 12px; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .header .subtitle { font-size: 1.2rem; opacity: .9; }
+
+        .section { margin-bottom: 40px; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,.1); border: 1px solid var(--border); }
+        .section h2 { color: var(--primary); font-size: 1.8rem; font-weight: 600; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .section h3 { color: var(--text); font-size: 1.2rem; font-weight: 600; margin: 16px 0 10px; }
+
+        ul, ol { margin: 12px 0; padding-left: 24px; }
+        li { margin: 8px 0; }
+
+        .requirements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 12px 0; }
+        .requirement-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .requirement-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+        .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 12px 0; }
+        .track-card { padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .track-card h4 { color: var(--primary); margin-bottom: 8px; }
+
+        .highlight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid var(--warning); border-radius: 8px; padding: 16px; margin: 16px 0; }
+        .highlight-box h4 { color: #92400e; margin-bottom: 8px; }
+
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--primary); }
+        .timeline-item { position: relative; margin-bottom: 16px; padding: 16px; background: var(--accent); border-radius: 8px; border-left: 4px solid var(--primary); }
+        .timeline-item::before { content: ''; position: absolute; left: -23px; top: 22px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; border: 3px solid #fff; }
+        .timeline-title { font-weight: 600; margin-bottom: 6px; }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header h1 { font-size: 2rem; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回首页</a>
+
+        <div class="header">
+            <h1>人工智能创意赛</h1>
+            <p class="subtitle">参赛指南</p>
+        </div>
+
+        <div class="section">
+            <h2>一、赛事简介</h2>
+            <p>人工智能创意赛面向在校学生与科研人员，倡导以 AI 技术驱动的创新创意与应用落地。赛事强调问题洞察、技术实现与社会价值，鼓励跨学科融合与负责任的 AI 实践。</p>
+            <div class="highlight-box">
+                <h4>赛事定位</h4>
+                <ul>
+                    <li>以创意为核心、以技术为支撑、以场景为驱动</li>
+                    <li>重视用户价值与可持续性，倡导“可信、可解释、可评测”的 AI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>二、参赛对象与组队要求</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>主体资格</h4>
+                    <ul>
+                        <li>全国高校在读学生（专科/本科/研究生）</li>
+                        <li>允许跨学科、跨年级、跨学院组队</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>团队规模</h4>
+                    <ul>
+                        <li>2-5 人/队，建议配置：产品/算法/工程/设计</li>
+                        <li>指导教师不超过 2 名（可选）</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>原创要求</h4>
+                    <ul>
+                        <li>项目需为原创或拥有合法授权</li>
+                        <li>不得侵犯第三方知识产权</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、赛道设置与作品要求</h2>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>创意概念组</h4>
+                    <ul>
+                        <li>聚焦问题洞察与创意方案，可提供原型/交互稿</li>
+                        <li>提交：创意说明文档、关键流程稿、可选原型演示</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>功能原型组</h4>
+                    <ul>
+                        <li>需实现核心功能 Demo，体现算法/系统可行性</li>
+                        <li>提交：可运行原型、技术说明、演示视频</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>应用落地组</h4>
+                    <ul>
+                        <li>面向真实场景与用户，强调价值验证与数据合规</li>
+                        <li>提交：可部署版本、测试数据说明、伦理合规模块</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h4>推荐技术方向</h4>
+                <ul>
+                    <li>大语言模型与智能体、RAG 检索增强、工具调用（Function Calling）</li>
+                    <li>多模态理解/生成（图像、语音、视频）、AIGC 内容安全</li>
+                    <li>医疗健康、教育评测、政务民生、绿色低碳、工业质检等场景</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、赛程安排（2025年）</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">报名及初赛材料提交截止</div>
+                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 8px;">2025年7月25日</div>
+                    <ul>
+                        <li>完成团队注册与项目信息填写</li>
+                        <li>提交初赛作品材料</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">复赛材料提交截止</div>
+                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 8px;">2025年9月10日</div>
+                    <ul>
+                        <li>完善作品功能与演示</li>
+                        <li>提交复赛作品材料</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">决赛现场答辩/颁奖典礼</div>
+                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 8px;">2025年10月-11月</div>
+                    <ul>
+                        <li>现场演示与答辩</li>
+                        <li>评选各等级奖项</li>
+                        <li>AI大模型创意训练营、颁奖典礼时间及地点另行通知</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、报名与官网</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>官网地址</h4>
+                    <p><a href="http://c4ai.importos.com/" target="_blank" rel="noopener">http://c4ai.importos.com/</a></p>
+                </div>
+                <div class="requirement-card">
+                    <h4>报名方式</h4>
+                    <ul>
+                        <li>登录官网完成团队注册与项目信息填写</li>
+                        <li>支持在截止日前修改并重复提交</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h4>参考资源</h4>
+                    <ul>
+                        <li>可参考各类 AI 竞赛官网、论文与开源项目</li>
+                        <li>建议使用公开、合规的数据集或获授权数据</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>六、评审维度与奖项设置</h2>
+            <div class="track-grid">
+                <div class="track-card">
+                    <h4>创意与价值（30分）</h4>
+                    <ul>
+                        <li>问题洞察、目标清晰度、用户价值与社会影响</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>技术实现（30分）</h4>
+                    <ul>
+                        <li>算法/系统合理性、性能指标、可扩展与稳定性</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>产品体验（20分）</h4>
+                    <ul>
+                        <li>交互设计、可用性、可达性与安全性</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h4>合规与伦理（20分）</h4>
+                    <ul>
+                        <li>数据合规、隐私保护、可解释性与风险控制</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>七、注意事项</h2>
+            <div class="highlight-box">
+                <h4>合规提醒</h4>
+                <ul>
+                    <li>不得使用违规数据；涉及个人信息需脱敏并获授权</li>
+                    <li>生成式内容需标注来源与限制，避免虚假与偏见</li>
+                    <li>公开发布代码/模型前请自审许可证与依赖合规</li>
+                </ul>
+            </div>
+            <ul>
+                <li>建议提前 3-5 天完成提交，避免平台高峰拥堵</li>
+                <li>演示视频控制在 3-7 分钟，突出核心能力与场景价值</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>八、联系方式</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h4>🏫 负责学院</h4>
+                    <p>软件学院</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>👩‍🏫 联系人</h4>
+                    <p>边婧</p>
+                </div>
+                <div class="requirement-card">
+                    <h4>📧 联系邮箱</h4>
+                    <p><a href="mailto:253301499@qq.com">253301499@qq.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280;">
+        <p>© <span id="year"></span> 软件学院科学与技术协会 版权所有</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
